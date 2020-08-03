@@ -1,0 +1,5 @@
+/mysql/data/*
+!/mysql/data/.gitkeep
+/grafana_data/*
+!/grafana_data/.gitkeep
+.DS_Store
