@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    container_name: mysql_db
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: world
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      TZ: 'Asia/Tokyo'
+    ports:
+      - 3306:3306
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+    ports:
+      - 3000:3000
+
+
+    
